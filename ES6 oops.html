@@ -1,0 +1,49 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+        class Customers{
+            constructor(name,id,age,address){
+                this.name = name;
+                this.id = id;
+                this.age = age;
+                this.address = address;
+            }
+            letter(){
+                return`${this.name} customer id is ${this.id}`
+            }
+
+            revices(whatever){
+                this.name = whatever;   
+            }
+
+            static justgive(){
+                return 'this is a good thing';
+            }
+            }
+        
+        const customer1 = new Customers('hari','5675','27','vidsahflabchfyabfcfukaf sj fug');
+        console.log(customer1);
+
+        console.log(customer1.revices('uday'));
+
+        console.log(customer1);
+
+        console.log(Customers.justgive());
+
+        class Clients extends Customers{
+            constructor(name,id,age,address){
+                super(name,id,age,address);
+            }
+        }
+
+
+        const client3 = new Clients('britto','756','33','jvgujageuygkc hcf ja hakfk');
+
+        console.log(client3);
+
+    </script>
+    </body>
+</html>

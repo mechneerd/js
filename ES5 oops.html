@@ -1,0 +1,59 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h4>practice job</h4>
+        <script>
+            function customer(name,id,phoneno,address){
+                this.name=name
+                this.id=id
+                this.phoneno=phoneno
+                this.address=address
+            }
+
+            const customer1 = new customer('kumar','324','93424105','dakfkdfkksdnkf');
+            
+
+
+            customer.prototype.letter = function(){
+                return `${this.name} is the customer with ${this.id} as ID`;
+            }
+
+            customer.prototype.year=function(){
+                let today = new Date();
+                let td = today.getFullYear();
+                return `${this.name} was written in the year ${td}`
+            }
+
+            customer.prototype.revise = function(phone,y){
+                this.phoneno= phone;
+                this.td = y;
+            }
+
+            console.log(customer1.letter());
+            console.log(customer1);
+            console.log(customer1.year());
+            console.log(customer1.revise('3242423552','2018'));
+            console.log(customer1);
+
+
+
+
+            function clients(name,id,phoneno,address){
+                customer.call(this,name,id,phoneno,address)
+            }
+
+            clients.prototype = Object.create(customer.prototype);
+
+            const client1= new clients('thamay','25235','945636434','andjnfkdnrkejni gkaga');
+
+            console.log(client1.letter());
+            console.log(client1);
+
+            clients.prototype.constructor = clients;
+            console.log(client1)
+
+        </script>
+    </body>
+</html>
