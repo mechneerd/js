@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+
+	<div style="background-color:blue;width:200px;height:70px;padding-left:15px;margin-left:350px;margin-top:250px;">
+	<label>Your Name</label><br>
+	<input type="text" id="name" name='name'></input><br>
+	<button id="btn">submit</button><br>
+	<p id="result" style="color:#9edfe5;background-color:#cb7051;width:215px;height:20px;margin-left:-15px;text-align:center;"></p>
+	</div>
+
+<script>
+const jq = $.noConflict();
+
+
+const yourage = async() => {
+
+	const url = `https://api.agify.io?name=${(jq("#name").val())}`;
+	const response = await fetch(url);
+	const data = await response.json();
+	console.log(data);
+	const age = data.age;
+	console.log(age);
+	jq('#result').text(`your age prediction is ${age}`);
+	}
+	
+
+jq('#btn').click(function(){yourage()});
+
+
+
+</script>
+
+
+
+</body>
+</html>
