@@ -1,0 +1,10 @@
+<?php
+welcome $_POST['username'];
+
+Your password is $_POST['password'];
+
+
+
+
+?>
+
