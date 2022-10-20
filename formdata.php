@@ -1,7 +1,7 @@
 ﻿<html>
 <body>
 
-welcome <?php echo $_POST["username"] ;?> <br>
+welcome php echo <?php $_POST["username"] ;?> <br>
 
 Your password is  : <?php echo $_POST["password"] ;?><br>
 
@@ -18,6 +18,7 @@ $arr = ($_POST['movies']);
 for($i=0;$i<(count($arr));$i++){
 	echo $arr[$i].'<br>';
 }
+	
 
 ?>
 
